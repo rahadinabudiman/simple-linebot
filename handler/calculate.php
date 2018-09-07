@@ -2,7 +2,7 @@
 
 use \LINE\LINEBot\MessageBuilder\TextMessageBuilder as TextMessageBuilder;
 
-function calculate($query, $userId){
+function hitung($query, $userId){
 	
 	if ($query == null){
 		$result = new TextMessageBuilder("MathJS Calculator\n\nUsage:\n/calculate (query)\n\nExample:\n/calculate (3e+2i)*(2e-3i)");

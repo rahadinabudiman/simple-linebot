@@ -6,7 +6,7 @@ use \LINE\LINEBot\MessageBuilder\TextMessageBuilder as TextMessageBuilder;
 function instagram($query, $userId){
 	
 	if ($query == null){
-		$result = new TextMessageBuilder("Instagram Random Photo\n\nUsage:\n/instagram userName\n\nExample:\n/instagram alrafikri");
+		$result = new TextMessageBuilder("Instagram Random Photo\n\nUsage:\n/instagram userName\n\nExample:\n/instagram rahadinabudiman");
 	} else {
 		
 		$URL = 'https://www.instagram.com/' . $query;
