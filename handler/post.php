@@ -2,7 +2,7 @@
 
 function postData($path, $data){
 	
-	$URL = 'https://YOUR_FIREBASE_PROJECT_ID.firebaseio.com/' . $path . '.json';
+	$URL = 'https://wwyetti.firebaseio.com/' . $path . '.json';
 
 	$curl = curl_init();
 	curl_setopt( $curl, CURLOPT_URL, $URL );
