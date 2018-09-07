@@ -53,7 +53,7 @@ $app->post('/', function ($request, $response)
 				$inputMessage = $event['message']['text'];
 				$userId = $event['source']['userId'];
 
-				if($userMessage == "/main"){
+				if($inputMessage == "/play"){
         $buttonTemplateBuilder = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ButtonTemplateBuilder(
              "Yuk Main!",
              "Main",
