@@ -42,12 +42,7 @@ $app->post('/', function ($request, $response)
 	$data = json_decode($body, true);
 	foreach ($data['events'] as $event)
 	{
-		if ($event['type'] == 'message')
-		{
-			if($event['message']['type'] == 'text')
-			{
-				
-				if($userMessage == "/main"){
+		if($userMessage == "/main"){
         $buttonTemplateBuilder = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ButtonTemplateBuilder(
              "Yuk Main!",
              "Main",
@@ -59,6 +54,12 @@ $app->post('/', function ($request, $response)
         $templateMessage = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder('Yuk Main!', $buttonTemplateBuilder);
         $result = $bot->replyMessage($event['replyToken'], $templateMessage);
         return $result->getHTTPStatus() . ' ' . $result->getRawBody();
+		if ($event['type'] == 'message')
+		{
+			if($event['message']['type'] == 'text')
+			{
+
+
 				// --------------------------------------------------------------- NOTICE ME...
 
 				$inputMessage = $event['message']['text'];
