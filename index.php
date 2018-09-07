@@ -81,7 +81,7 @@ $app->post('/', function ($request, $response)
 					
 				} else {
 					
-					$wordsLearned = file_get_contents('https://linebotdatabase.firebaseio.com/words.json');
+					$wordsLearned = file_get_contents('https://wwyetti.firebaseio.com/words.json');
 					$wordsLearned = json_decode($wordsLearned, true);
 					
 					foreach ($wordsLearned as $word => $answer){
