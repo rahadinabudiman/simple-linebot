@@ -47,6 +47,7 @@ $app->post('/', function ($request, $response)
 			if($event['message']['type'] == 'text')
 			{
 				
+				
 				// --------------------------------------------------------------- NOTICE ME...
 
 				$inputMessage = $event['message']['text'];
@@ -96,7 +97,20 @@ $app->post('/', function ($request, $response)
 				}
 
 				// --------------------------------------------------------------- ...SENPAI!
-				
+				 if($userMessage == "/main"){
+        $buttonTemplateBuilder = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ButtonTemplateBuilder(
+             "Yuk Main!",
+             "Main",
+             "https://instagram.fbdo2-1.fna.fbcdn.net/vp/eeaf8c8419e28b0f0215f301d13a7278/5C3BBC39/t51.2885-19/s150x150/37507934_260340384816036_1795743564672532480_n.jpg",
+           [
+        new \LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder('Yuk Main!','main'),
+           ]
+           );
+        $templateMessage = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder('Yuk Main!', $buttonTemplateBuilder);
+        $result = $bot->replyMessage($event['replyToken'], $templateMessage);
+        return $result->getHTTPStatus() . ' ' . $result->getRawBody();
+        }
+
 			}
 		}
 	}
