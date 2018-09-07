@@ -73,7 +73,7 @@ $app->post('/', function ($request, $response)
 								$cmds .= $result[1];
 							}
 						}
-						$outputMessage = new TextMessageBuilder('List of available commands: ' . $cmds);
+						
 					}
 
 					$result = $bot->replyMessage($event['replyToken'], $outputMessage);
