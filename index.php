@@ -46,15 +46,11 @@ $app->post('/', function ($request, $response)
 		{
 			if($event['message']['type'] == 'text')
 			{
-
-
+				
 				// --------------------------------------------------------------- NOTICE ME...
 
 				$inputMessage = $event['message']['text'];
 				$userId = $event['source']['userId'];
-
-        return $result->getHTTPStatus() . ' ' . $result->getRawBody();
-        
 
 				if ($inputMessage[0] == '/'){
 					
@@ -77,7 +73,7 @@ $app->post('/', function ($request, $response)
 								$cmds .= $result[1];
 							}
 						}
-						
+						$outputMessage = new TextMessageBuilder('List of available commands: ' . $cmds);
 					}
 
 					$result = $bot->replyMessage($event['replyToken'], $outputMessage);
@@ -85,7 +81,7 @@ $app->post('/', function ($request, $response)
 					
 				} else {
 					
-					$wordsLearned = file_get_contents('https://wwyetti.firebaseio.com/words.json');
+					$wordsLearned = file_get_contents('https://linebotdatabase.firebaseio.com/words.json');
 					$wordsLearned = json_decode($wordsLearned, true);
 					
 					foreach ($wordsLearned as $word => $answer){
@@ -98,15 +94,12 @@ $app->post('/', function ($request, $response)
 					}
 					
 				}
-				// --------------------------------------------------------------- ...SENPAI!
-				 
-        }
 
+				// --------------------------------------------------------------- ...SENPAI!
+				
 			}
 		}
 	}
-
-
 
 });
 
