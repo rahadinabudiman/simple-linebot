@@ -90,6 +90,9 @@ $app->post('/', function ($request, $response)
 							break;
 						}
 					}
+					else{
+						$teks = new TextMessageBuilder("Query tidak diketahui");
+					}
 					
 				}
 				
