@@ -4,7 +4,7 @@ use \LINE\LINEBot\MessageBuilder\TextMessageBuilder as TextMessageBuilder;
 
 function apakah($query, $userId){
     if ($query == null){
-        $result = new TextMessageBuilder("Kerang Ajaib Memberi Anda Sebuah Jawaban!\n\nCara Pakai:\n/kerang [apakah] [pertanyaan]\n\nExample:\n/kerang apakah aku lucu?");
+        $result = new TextMessageBuilder("Kerang Ajaib Memberi Anda Sebuah Jawaban!\n\nCara Pakai:\n/apakah [pertanyaan]\n\nExample:\n/apakah aku lucu?");
     }
         else {
             $list_jwb = array(

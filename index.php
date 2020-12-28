@@ -19,7 +19,7 @@ $configs =  [
 $app = new Slim\App($configs);
 
 $app->get('/', function ($request, $response) {
-	return "LINE bot SDK - Rahadina Budiman Sundara";
+	return "Rahadina BUdiman Sundara - https://www.keyzex.com/";
 });
 
 $app->post('/', function ($request, $response)
