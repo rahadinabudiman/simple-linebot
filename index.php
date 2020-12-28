@@ -91,8 +91,8 @@ $app->post('/', function ($request, $response)
 					
 				}
 				else{
-					$result = new TextMessageBuilder("Query tidak diketahui.");
-					return $result;
+					$kurangtau = new TextMessageBuilder("Query tidak diketahui.");
+					return $kurangtau;
 				}
 				
 			}
