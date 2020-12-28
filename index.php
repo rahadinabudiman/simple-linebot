@@ -88,8 +88,7 @@ $app->post('/', function ($request, $response)
 						}
 						else{
 							$keluaran = new TextMessageBuilder('Perintah tidak diketahui.');
-							$kbotresult = $bot->replyMessage($event['replyToken'], $keluaran);
-							return $kbotresult->getHTTPStatus() . ' ' . $kbotresult->getRawBody();
+							return $keluaran;
 						}
 		
 					}
