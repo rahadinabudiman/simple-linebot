@@ -1,5 +1,6 @@
 <?php
 
+use \LINE\LINEBot\MessageBuilder\TextMessageBuilder as TextMessageBuilder;
 
 function kerang($query, $userId){
     $list_jwb = array(
