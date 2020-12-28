@@ -86,10 +86,11 @@ $app->post('/', function ($request, $response)
 							return $result->getHTTPStatus() . ' ' . $result->getRawBody();
 							break;
 						}
-						else{
-							$keluaran = new TextMessageBuilder('Perintah tidak diketahui.');
-							return $keluaran;
-						}
+						//else{
+						//	$keluaran = new TextMessageBuilder('Perintah tidak diketahui.');
+						//	$result = $bot->replyMessage($event['replyToken'], $keluaran);
+						//	return $result->getHTTPStatus() . ' ' . $result->getRawBody();
+						// }
 		
 					}
 					
