@@ -82,7 +82,6 @@ $app->post('/', function ($request, $response)
 					foreach ($wordsLearned as $word => $answer){
 						if (strpos(strtolower($inputMessage), $word) !== false){
 							$outputMessage = new TextMessageBuilder($answer);
-							$outputMessage = new TextMessageBuilder(printf($wordsLearned));
 							$result = $bot->replyMessage($event['replyToken'], $outputMessage);
 							return $result->getHTTPStatus() . ' ' . $result->getRawBody();
 							break;
