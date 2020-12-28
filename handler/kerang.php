@@ -12,5 +12,6 @@ function kerang($query, $userId){
 		);
     $jaws = array_rand($list_jwb);
     $jawab = $list_jwb[$jaws];
-    return($kerang);
+    $result = new TextMessageBuilder($jawab);
+    return($result);
 }
