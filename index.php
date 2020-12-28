@@ -19,7 +19,7 @@ $configs =  [
 $app = new Slim\App($configs);
 
 $app->get('/', function ($request, $response) {
-	return "Rahadina BUdiman Sundara - https://www.keyzex.com/";
+	return "Rahadina Budiman Sundara - https://www.keyzex.com/";
 });
 
 $app->post('/', function ($request, $response)
