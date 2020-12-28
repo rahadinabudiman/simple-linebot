@@ -86,12 +86,6 @@ $app->post('/', function ($request, $response)
 							return $result->getHTTPStatus() . ' ' . $result->getRawBody();
 							break;
 						}
-						else{
-							$outputMessage = new TextMessageBuilder('Perintah tidak diketahui.');
-							$result = $bot->replyMessage($event['replyToken'], $outputMessage);
-							return $result->getHTTPStatus() . ' ' . $result->getRawBody();
-							break;
-						 }
 					}
 					
 				}
