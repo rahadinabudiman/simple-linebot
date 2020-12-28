@@ -46,8 +46,6 @@ $app->post('/', function ($request, $response)
 		{
 			if($event['message']['type'] == 'text')
 			{
-				
-				// --------------------------------------------------------------- NOTICE ME...
 
 				$inputMessage = $event['message']['text'];
 				$userId = $event['source']['userId'];
@@ -94,8 +92,6 @@ $app->post('/', function ($request, $response)
 					}
 					
 				}
-
-				// --------------------------------------------------------------- ...SENPAI!
 				
 			}
 		}
