@@ -74,7 +74,7 @@ $app->post('/', function ($request, $response)
 					$result = $bot->replyMessage($event['replyToken'], $outputMessage);
 					return $result->getHTTPStatus() . ' ' . $result->getRawBody();
 					
-				} elseif {
+				} else{
 					
 					$wordsLearned = file_get_contents('https://wwyetti.firebaseio.com/words.json');
 					$wordsLearned = json_decode($wordsLearned, true);
@@ -86,13 +86,15 @@ $app->post('/', function ($request, $response)
 							return $result->getHTTPStatus() . ' ' . $result->getRawBody();
 							break;
 						}
+						else{
+							$outputMessage = new TextMessageBuilder('Perintah tidak diketahui.');
+							$result = $bot->replyMessage($event['replyToken'], $outputMessage);
+							return $result->getHTTPStatus() . ' ' . $result->getRawBody();
+							break;
+						}
 		
 					}
 					
-				}
-				else{
-					$kurangtau = new TextMessageBuilder("Query tidak diketahui.");
-					return $kurangtau;
 				}
 				
 			}
