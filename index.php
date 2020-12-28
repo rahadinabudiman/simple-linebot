@@ -89,10 +89,10 @@ $app->post('/', function ($request, $response)
 							return $result->getHTTPStatus() . ' ' . $result->getRawBody();
 							break;
 						}
-					}
-					else{
-						$teks = new TextMessageBuilder("Perintah tidak dikenali.");
-						return $teks;
+						else{
+							$teks = new TextMessageBuilder("Perintah tidak dikenali.");
+							return $teks;
+						}
 					}
 					
 				}
