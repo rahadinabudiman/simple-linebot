@@ -84,13 +84,14 @@ $app->post('/', function ($request, $response)
 							$outputMessage = new TextMessageBuilder($answer);
 							$result = $bot->replyMessage($event['replyToken'], $outputMessage);
 							return $result->getHTTPStatus() . ' ' . $result->getRawBody();
+							break;
 						}
 						else{
 							$outputMessage = new TextMessageBuilder($answer);
 							$result = $bot->replyMessage($event['replyToken'], $outputMessage);
 							return $result->getHTTPStatus() . ' ' . $result->getRawBody();
+							break;
 						 }
-						 break;
 					}
 					
 				}
