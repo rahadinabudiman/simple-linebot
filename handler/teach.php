@@ -5,7 +5,7 @@ use \LINE\LINEBot\MessageBuilder\TextMessageBuilder as TextMessageBuilder;
 function teach($query, $userId){
 	
 	include 'post.php';
-	if ($userId != 'Ufdf710ace406a909c2def1ee020f1340' && 'U8d4f5c9c40215e0c27730283b82b961f' ){
+	if ($userId != 'Ufdf710ace406a909c2def1ee020f1340'){
 		$result = new TextMessageBuilder('Access denied.');
 	} else {
 		
