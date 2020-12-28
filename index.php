@@ -40,12 +40,9 @@ $app->post('/', function ($request, $response)
 	$bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $_ENV['CHANNEL_SECRET']]);
 
 	$data = json_decode($body, true);
-	foreach ($data['events'] as $event)
-	{
-		if ($event['type'] == 'message')
-		{
-			if($event['message']['type'] == 'text')
-			{
+	foreach ($data['events'] as $event){
+		if ($event['type'] == 'message'){
+			if($event['message']['type'] == 'text'){
 
 				$inputMessage = $event['message']['text'];
 				$userId = $event['source']['userId'];
@@ -77,7 +74,7 @@ $app->post('/', function ($request, $response)
 					$result = $bot->replyMessage($event['replyToken'], $outputMessage);
 					return $result->getHTTPStatus() . ' ' . $result->getRawBody();
 					
-				} else {
+				} elseif {
 					
 					$wordsLearned = file_get_contents('https://wwyetti.firebaseio.com/words.json');
 					$wordsLearned = json_decode($wordsLearned, true);
@@ -92,6 +89,10 @@ $app->post('/', function ($request, $response)
 		
 					}
 					
+				}
+				else{
+					$result = new TextMessageBuilder("Query tidak diketahui.");
+					return $result;
 				}
 				
 			}
