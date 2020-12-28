@@ -5,9 +5,9 @@ use \LINE\LINEBot\MessageBuilder\TextMessageBuilder as TextMessageBuilder;
 function teach($query, $userId){
 	
 	include 'post.php';
-	if ($userId != 'U8d4f5c9c40215e0c27730283b82b961f'){
-		$result = new TextMessageBuilder('Access denied.');
-	} else {
+	// if ($userId != 'U8d4f5c9c40215e0c27730283b82b961f'){
+	//	$result = new TextMessageBuilder('Access denied.');
+	// } else {
 		
 		if ($query == null){
 			$result = new TextMessageBuilder("Teach Me Words\n\n/teach [word] [answer*]\n\n*if not included means delete [word]");
@@ -26,7 +26,7 @@ function teach($query, $userId){
 			}
 			
 		}
-	}
+	// }
 	
 	return $result;
 	
