@@ -91,7 +91,8 @@ $app->post('/', function ($request, $response)
 						}
 					}
 					else{
-						$teks = new TextMessageBuilder("Query tidak diketahui");
+						$teks = new TextMessageBuilder("Perintah tidak dikenali.");
+						return $teks;
 					}
 					
 				}
