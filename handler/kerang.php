@@ -19,3 +19,4 @@ function kerang($query, $userId){
     $result = new TextMessageBuilder($jawab);
     return($result);
 }
+}
