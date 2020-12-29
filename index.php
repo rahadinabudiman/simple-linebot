@@ -68,17 +68,20 @@ $app->post('/', function ($request, $response)
 								$cmds .= $result[1];
 							}
 						}
+						else{
+							$outputMessage = new TextMessageBuilder('Perintah tidak diketahui.');
+						}
 						
 					}
 
 					$result = $bot->replyMessage($event['replyToken'], $outputMessage);
 					return $result->getHTTPStatus() . ' ' . $result->getRawBody();
 					
-				} else{
-							$outputMessage = new TextMessageBuilder('Perintah tidak diketahui.');
-							$result = $bot->replyMessage($event['replyToken'], $outputMessage);
-							return $result->getHTTPStatus() . ' ' . $result->getRawBody();
-				}
+				} //else{
+						//	$outputMessage = new TextMessageBuilder('Perintah tidak diketahui.');
+						//	$result = $bot->replyMessage($event['replyToken'], $outputMessage);
+						//	return $result->getHTTPStatus() . ' ' . $result->getRawBody();
+				//}
 				
 			}
 		}
