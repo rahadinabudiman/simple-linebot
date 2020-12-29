@@ -55,8 +55,7 @@ $app->post('/', function ($request, $response)
 					if ( function_exists( $inputSplit[0] ) ){
 						$outputMessage = $inputSplit[0]( $inputSplit[1], $userId );
 					} else {
-						$outputMessage = new TextMessageBuilder('Perintah tidak diketahui.');
-						
+						$outputMessage = new TextMessageBuilder('Perintah tidak diketahui. type /help for using this bot');
 					}
 
 					$result = $bot->replyMessage($event['replyToken'], $outputMessage);
