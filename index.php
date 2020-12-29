@@ -55,22 +55,7 @@ $app->post('/', function ($request, $response)
 					if ( function_exists( $inputSplit[0] ) ){
 						$outputMessage = $inputSplit[0]( $inputSplit[1], $userId );
 					} else {
-						$cmds = '';
-						$ctr = 0;
-						foreach (glob("handler/*.php") as $handler){
-							if ($handler != 'handler/post.php'){
-								$ctr++;
-								$regex = '/handler\/(.*?).php/';
-								preg_match($regex, $handler, $result);
-								if ($ctr > 1){
-									$cmds .= ', ';
-								}
-								$cmds .= $result[1];
-							}
-						}
-						else{
-							$outputMessage = new TextMessageBuilder('Perintah tidak diketahui.');
-						}
+						$outputMessage = new TextMessageBuilder('Perintah tidak diketahui.');
 						
 					}
 
